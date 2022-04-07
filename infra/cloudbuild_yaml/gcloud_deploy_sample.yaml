@@ -18,5 +18,5 @@ steps:
         "--region", "europe-west1",
         "--annotations", "commitId=${REVISION_ID}",
         "--images", "cloud-deploy=europe-west1-docker.pkg.dev/$_PROJECT_ID/$_IMAGE_NAME/flaskapp:$COMMIT_SHA",
-        "--skaffold-file=/infra/gcloud_deploy/skaffold.yml"
+        "--skaffold-file=/workspace/infra/gcloud_deploy/skaffold.yml"
       ]

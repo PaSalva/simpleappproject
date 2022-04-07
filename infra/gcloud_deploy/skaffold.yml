@@ -6,17 +6,17 @@ deploy:
   kustomize:
     defaultNamespace: dev
     paths: 
-      - infra/gcloud_deploy/k8s/overlays/dev
+      - k8s/overlays/dev
 profiles:
   - name: pre
     deploy:
       kustomize:
         defaultNamespace: pre
         paths: 
-          - infra/gcloud_deploy/k8s/overlays/pre
+          - k8s/overlays/pre
   - name: pro
     deploy:
       kustomize:
         defaultNamespace: pro
         paths: 
-          - infra/gcloud_deploy/k8s/overlays/pro
+          - k8s/overlays/pro
