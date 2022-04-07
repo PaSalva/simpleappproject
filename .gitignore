@@ -1,0 +1,18 @@
+#  Local .terraform directories
+**/.terraform*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# Terraform variables
+*.auto.tfvars
+
+# .vscode files
+*.vscode
+
+# Json files
+*.json
+
+# env files
+*.env
