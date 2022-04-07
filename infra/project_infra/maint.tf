@@ -28,9 +28,11 @@ module "cloudbuild_gcloud_deploy" {
   repository_name = "simpleappproject"
   regex_branchs = "prod"
   cloudbuild_yml = "infra/cloudbuild_yaml/gcloud_deploy_sample.yaml"
+  apis = [
+    "artifactregistry"
+  ]
   substitutions      = {
     _PROJECT_ID = var.project_id
   }
 }
-
 
