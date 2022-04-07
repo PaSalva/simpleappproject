@@ -14,7 +14,7 @@ steps:
     args: 
       [
         "deploy", "releases", "create", "rel-${SHORT_SHA}",
-        "--delivery-pipeline", "simple-app-pipeline",
+        "--delivery-pipeline", "cloud-deploy",
         "--region", "europe-west1",
         "--annotations", "commitId=${REVISION_ID}",
         "--images", "cloud-deploy=europe-west1-docker.pkg.dev/$_PROJECT_ID/$_IMAGE_NAME/flaskapp:$COMMIT_SHA",
