@@ -16,3 +16,6 @@
 
 # env files
 *.env
+
+# Others
+/infra/gcloud_deploy/clouddeploy.yaml

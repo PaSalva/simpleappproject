@@ -43,6 +43,9 @@ module "cloudbuild_gcloud_deploy" {
     _IMAGE_NAME = module.registry.image
   }
 
+  apis = [
+    "clouddeploy"
+  ]
   depends_on = [
     module.registry
   ]
