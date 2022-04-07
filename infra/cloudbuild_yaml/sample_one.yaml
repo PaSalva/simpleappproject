@@ -1,0 +1,60 @@
+steps:
+  # En el directorio por defecto
+  - name: gcr.io/cloud-builders/gcloud
+    id: 'Generar file en directorior por defecto' 
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        pwd && ls -l 
+        echo "New file is here!" > file_step1.txt
+        ls -l
+  # En un directorio relativo (fichero/)
+  - name: gcr.io/cloud-builders/npm
+    id: 'Generar file en directorio relativo'
+    dir: 'fichero/'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        pwd && ls -l 
+        echo "New file is here!" > file_step2.txt
+        ls -l
+  # En un directorio absoluto (/fichero)
+  - name: gcr.io/cloud-builders/npm
+    id: 'Generar file en directorio absoluto'
+    dir: '/fichero'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        pwd && ls -l 
+        echo "New file is here!" > file_step3.txt
+        ls -l
+  # En un directorio absoluto con un volumen (/ficherovolumen)
+  - name: gcr.io/cloud-builders/npm
+    id: 'Directorio absoluto con volumen'
+    volume: 
+      - name: "vol1"
+        path : "/ficherovolumen"
+    dir: '/ficherovolumen'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        pwd && ls -l 
+        echo "Soy persistente!" > file_step4.txt
+        ls -l
+  # Checking volume persistence
+  - name: gcr.io/cloud-builders/npm
+    id: 'Checking volume persistence'
+    volume: 
+      - name: "vol1"
+        path : "/ficherovolumen"
+    dir: '/ficherovolumen'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        pwd && ls -l 
+        cat file_step4.txt
