@@ -34,7 +34,7 @@ steps:
   # En un directorio absoluto con un volumen (/ficherovolumen)
   - name: gcr.io/cloud-builders/npm
     id: 'Directorio absoluto con volumen'
-    volume: 
+    volumes: 
       - name: "vol1"
         path : "/ficherovolumen"
     dir: '/ficherovolumen'
@@ -48,7 +48,7 @@ steps:
   # Checking volume persistence
   - name: gcr.io/cloud-builders/npm
     id: 'Checking volume persistence'
-    volume: 
+    volumes: 
       - name: "vol1"
         path : "/ficherovolumen"
     dir: '/ficherovolumen'
