@@ -36,3 +36,7 @@ spec:
             port: 5000
           initialDelaySeconds: 1
           periodSeconds: 10
+      volumes:
+      - name: service-account-credentials-volume
+        secret:
+          secretName: sv-credentials

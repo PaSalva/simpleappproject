@@ -45,10 +45,12 @@ resource "google_container_node_pool" "primary_preemptible_nodes" {
     preemptible  = true
     machine_type = "n1-standard-1"
 
+    service_account = google_service_account.gke_service_account.email
   }
 
   autoscaling {
     min_node_count = 1
     max_node_count = 2
   }
+
 }
