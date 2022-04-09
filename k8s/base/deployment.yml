@@ -17,6 +17,10 @@ spec:
       containers:
       - name: treewebserver
         image: cloud-deploy
+        volumeMounts:
+        - name: service-account-credentials-volume
+          mountPath: /credential
+          readOnly: true
         resources:
           limits:
             cpu: 1
