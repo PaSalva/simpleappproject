@@ -12,3 +12,4 @@ Requisites:
 - definitions.auto.tfvars at /project_infra/
 
 Run this project with make sh
+
