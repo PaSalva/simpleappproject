@@ -12,7 +12,7 @@
 *.vscode
 
 # SA files
-/functions/firebase_and_datastore/sa.json
+/functions/*/sa.json
 credential.json
 
 # env files
@@ -20,3 +20,8 @@ credential.json
 
 # Others
 /infra/gcloud_deploy/clouddeploy.yaml
+
+# Functions
+**/node_modules
+*.mp3
+**/package-lock.json
