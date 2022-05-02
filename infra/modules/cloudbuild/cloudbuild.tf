@@ -7,6 +7,9 @@ variable "project_id" {}
 variable "repository_name" {}
 variable "regex_branchs" {}
 variable "cloudbuild_yml" {}
+variable substitutions {
+    default = {}
+}
 
 ###############
 ##    APIS   ##
@@ -40,6 +43,7 @@ resource "google_cloudbuild_trigger" "trigger" {
       branch = var.regex_branchs
     }
   }
+  substitutions = var.substitutions
   filename = var.cloudbuild_yml
 
   depends_on = [

@@ -1,0 +1,42 @@
+apiVersion: deploy.cloud.google.com/v1
+kind: DeliveryPipeline
+metadata:
+  name: $_NAME
+description: Simple application delivery pipeline
+serialPipeline:
+ stages:
+ - targetId: dev
+ - targetId: pre
+   profiles:
+   - pre
+ - targetId: pro
+   profiles:
+   - pro
+---
+
+apiVersion: deploy.cloud.google.com/v1
+kind: Target
+metadata:
+  name: dev
+description: dev cluster
+gke:
+  cluster: projects/$_PROJECT/locations/$_ZONE/clusters/$_CLUSTER
+---
+
+apiVersion: deploy.cloud.google.com/v1
+kind: Target
+metadata:
+  name: pre
+description: pre cluster
+gke:
+  cluster: projects/$_PROJECT/locations/$_ZONE/clusters/$_CLUSTER
+---
+
+apiVersion: deploy.cloud.google.com/v1
+kind: Target
+metadata:
+  name: pro
+description: pro cluster
+requireApproval: true
+gke:
+  cluster: projects/$__PROJECT/locations/$_ZONE/clusters/$_CLUSTER
