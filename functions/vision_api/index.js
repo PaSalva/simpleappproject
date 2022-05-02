@@ -142,7 +142,8 @@ async function anonimous(text) {
     keyFilename: './sa.json'
   });
 
-  const projectId = 'diesel-command-332713';
+  // TODO: Complete with projectID
+  const projectId = '';
 
   const request = {
     parent: `projects/${projectId}/locations/global`,
