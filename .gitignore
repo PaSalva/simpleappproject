@@ -11,8 +11,9 @@
 # .vscode files
 *.vscode
 
-# Json files
-*.json
+# SA files
+/functions/firebase_and_datastore/sa.json
+credential.json
 
 # env files
 *.env
