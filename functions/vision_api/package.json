@@ -1,0 +1,15 @@
+{
+  "name": "login",
+  "description": "Login Firebase Authentication.",
+  "version": "0.0.1",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.18.0",
+    "@google-cloud/speech": "^4.10.1",
+    "@google-cloud/storage": "^5.0.0",
+    "@google-cloud/language": "^4.3.2",
+    "@google-cloud/translate": "^6.0.3",
+    "@google-cloud/text-to-speech": "^3.4.0",
+    "@google-cloud/dlp": "^3.5.0"
+  }
+}

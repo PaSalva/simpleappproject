@@ -1,0 +1,12 @@
+{
+  "name": "login",
+  "description": "Login Firebase Authentication.",
+  "version": "0.0.1",
+  "main": "index.js",
+  "dependencies": {
+    "@google-cloud/documentai": "^3.3.0",
+    "@google-cloud/storage": "^5.0.0",
+    "@google-cloud/vision": "^2.4.2",
+    "express": "^4.18.0"
+  }
+}
